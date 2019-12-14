@@ -5,9 +5,9 @@
 
 The environment is solved using a multi-agent deep deterministic policy gradient (DDPG) algorithm. Training proceeds as follows:
 
-1. The 2 agents each receive a different state vector (with 24 elements) from the environment
-1. Each agent feeds its state vector through the local actor network to get an action vector (with 2 elements) as output. Noise based on an Ornstein-Uhlenbeck process is added to the predicted actions to encourage exploration
-1. Each agent then receives a next state vector and a reward from the environment (as well as a termination signal that indicates if the episode is complete)
+- The 2 agents each receive a different state vector (with 24 elements) from the environment
+- Each agent feeds its state vector through the local actor network to get an action vector (with 2 elements) as output. Noise based on an Ornstein-Uhlenbeck process is added to the predicted actions to encourage exploration
+- Each agent then receives a next state vector and a reward from the environment (as well as a termination signal that indicates if the episode is complete)
 - The experience tuple `(state, action, reward, next state)` of each agent is added to a common replay buffer
 - A random sample of experience tuples is drawn from the replay buffer (once it contains enough) 
 - The sample is used to update the weights of the local critic network:
